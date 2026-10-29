@@ -1,0 +1,23 @@
+# Dependencies
+/vendor/
+
+# Environment config (DB credentials, crypt key)
+/app/etc/env.php
+/auth.json
+
+# Generated / runtime
+/generated/*
+!/generated/.htaccess
+/var/*
+!/var/.htaccess
+/pub/static/*
+!/pub/static/.htaccess
+/pub/media/*
+!/pub/media/.htaccess
+/setup/.htaccess.bak
+
+# IDE / OS
+/.idea/
+/.vscode/
+.DS_Store
+node_modules/

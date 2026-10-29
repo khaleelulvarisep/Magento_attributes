@@ -1,0 +1,15 @@
+{
+    "codilar_custom_data": {
+        "column": {
+            "entity_id": true,
+            "name": true,
+            "email": true,
+            "status": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "CODILAR_CUSTOM_DATA_EMAIL": true
+        }
+    }
+}

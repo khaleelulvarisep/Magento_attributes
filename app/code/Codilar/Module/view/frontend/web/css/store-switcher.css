@@ -1,0 +1,44 @@
+.codilar-store-switcher {
+    float: right;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.codilar-store-switcher__current {
+    font-weight: 600;
+}
+
+.codilar-store-switcher__button,
+.codilar-store-switcher__button:visited {
+    padding: 4px 12px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.codilar-store-switcher__button:hover,
+.codilar-store-switcher__button:focus {
+    background: #ffffff;
+    color: #333333;
+    border-color: #ffffff;
+}
+
+/* Mobile: header panel is hidden, keep the button visible above the logo */
+@media (max-width: 767px) {
+    .codilar-store-switcher {
+        float: none;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 6px 15px;
+        background: #6e716e;
+    }
+}

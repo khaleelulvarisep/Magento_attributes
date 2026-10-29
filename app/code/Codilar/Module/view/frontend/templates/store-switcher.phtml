@@ -1,0 +1,18 @@
+<?php
+/** @var \Magento\Store\Block\Switcher $block */
+?>
+<?php if (count($block->getGroups()) > 1): ?>
+<div class="codilar-store-switcher">
+    <?php foreach ($block->getGroups() as $group): ?>
+        <?php if ($group->getId() == $block->getCurrentGroupId()): ?>
+            <span class="codilar-store-switcher__current"><?= $block->escapeHtml($group->getName()) ?></span>
+        <?php else: ?>
+            <button type="button"
+                    class="action codilar-store-switcher__button"
+                    data-post='<?= /* @noEscape */ $block->getTargetStorePostData($group->getDefaultStore()) ?>'>
+                <?= $block->escapeHtml(__('Switch to %1', $group->getName())) ?>
+            </button>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>

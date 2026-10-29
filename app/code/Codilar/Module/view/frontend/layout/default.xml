@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Codilar_Module::css/store-switcher.css"/>
+    </head>
+    <body>
+        <!-- Replace the footer store dropdown with a button in the top-right header panel -->
+        <referenceBlock name="store_switcher" remove="true"/>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Store\Block\Switcher"
+                   name="codilar.store.switcher"
+                   template="Codilar_Module::store-switcher.phtml"
+                   before="-"/>
+        </referenceContainer>
+    </body>
+</page>
