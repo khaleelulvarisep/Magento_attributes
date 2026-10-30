@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Codilar_Support::support" title="Support Management" translate="title" sortOrder="35">
+                    <resource id="Codilar_Support::requests" title="Support Requests" translate="title" sortOrder="10">
+                        <resource id="Codilar_Support::request_save" title="Add / Edit Request" translate="title" sortOrder="10"/>
+                        <resource id="Codilar_Support::request_delete" title="Delete Request" translate="title" sortOrder="20"/>
+                    </resource>
+                    <resource id="Codilar_Support::statuses" title="Manage Statuses" translate="title" sortOrder="20"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

@@ -38,6 +38,7 @@ class AddCustomData implements DataPatchInterface
             ]
         );
 
+        
         // Option 2: save a single row through the model + resource model
         $customData = $this->customDataFactory->create();
         $customData->setData([

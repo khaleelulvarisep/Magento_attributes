@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Grid collections used by the UI listing data sources -->
+    <virtualType name="Codilar\Support\Model\ResourceModel\Request\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_support_request</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\Support\Model\ResourceModel\Request</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Codilar\Support\Model\ResourceModel\Status\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">codilar_support_status</argument>
+            <argument name="resourceModel" xsi:type="string">Codilar\Support\Model\ResourceModel\Status</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="codilar_support_request_listing_data_source" xsi:type="string">Codilar\Support\Model\ResourceModel\Request\Grid\Collection</item>
+                <item name="codilar_support_status_listing_data_source" xsi:type="string">Codilar\Support\Model\ResourceModel\Status\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Status options limited to active statuses, used by the request form -->
+    <virtualType name="Codilar\Support\Model\Source\ActiveStatus" type="Codilar\Support\Model\Source\Status">
+        <arguments>
+            <argument name="onlyActive" xsi:type="boolean">true</argument>
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,34 @@
+{
+    "codilar_support_request": {
+        "column": {
+            "request_id": true,
+            "customer_name": true,
+            "email": true,
+            "subject": true,
+            "message": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "CODILAR_SUPPORT_REQUEST_STATUS": true,
+            "CODILAR_SUPPORT_REQUEST_CUSTOMER_NAME_EMAIL_SUBJECT_MESSAGE": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "codilar_support_status": {
+        "column": {
+            "status_id": true,
+            "code": true,
+            "label": true,
+            "sort_order": true,
+            "is_active": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "CODILAR_SUPPORT_STATUS_CODE": true
+        }
+    }
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">codilar_support_request_form.codilar_support_request_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Support Request</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back" class="Codilar\Support\Block\Adminhtml\Edit\BackButton"/>
+            <button name="delete" class="Codilar\Support\Block\Adminhtml\Edit\DeleteButton"/>
+            <button name="save_and_continue" class="Codilar\Support\Block\Adminhtml\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Codilar\Support\Block\Adminhtml\Edit\SaveButton"/>
+        </buttons>
+        <namespace>codilar_support_request_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>codilar_support_request_form.codilar_support_request_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="codilar_support_request_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="codilar_support/request/save"/>
+        </settings>
+        <dataProvider class="Codilar\Support\Model\Request\DataProvider" name="codilar_support_request_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>request_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="request_id" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>request_id</dataScope>
+            </settings>
+        </field>
+        <field name="customer_name" sortOrder="10" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="max_text_length" xsi:type="number">255</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Customer Name</label>
+                <dataScope>customer_name</dataScope>
+            </settings>
+        </field>
+        <field name="email" sortOrder="20" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-email" xsi:type="boolean">true</rule>
+                    <rule name="max_text_length" xsi:type="number">255</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Email</label>
+                <dataScope>email</dataScope>
+            </settings>
+        </field>
+        <field name="subject" sortOrder="30" formElement="input">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="max_text_length" xsi:type="number">255</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Subject</label>
+                <dataScope>subject</dataScope>
+            </settings>
+        </field>
+        <field name="message" sortOrder="40" formElement="textarea">
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Message</label>
+                <dataScope>message</dataScope>
+            </settings>
+            <formElements>
+                <textarea>
+                    <settings>
+                        <rows>8</rows>
+                    </settings>
+                </textarea>
+            </formElements>
+        </field>
+        <field name="status" sortOrder="50" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">pending</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Status</label>
+                <dataScope>status</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Codilar\Support\Model\Source\ActiveStatus"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+</form>

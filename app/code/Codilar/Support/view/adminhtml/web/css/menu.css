@@ -1,0 +1,12 @@
+/* Icon for the "Support Management" tile (same mechanism core uses for .item-catalog) */
+.admin__menu .item-support > a:before {
+    content: '\e633';
+}
+
+/* Highlight the current Support Management submenu link (_current is added by MenuItemCheckerPlugin) */
+.admin__menu .submenu li._current > a,
+.admin__menu .submenu li._current > a:hover {
+    background-color: #514943;
+    box-shadow: inset .3rem 0 0 #eb5202;
+    color: #ffffff;
+}

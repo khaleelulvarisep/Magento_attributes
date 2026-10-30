@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!-- Level 0: no action, so clicking it opens the native fly-out submenu (like Catalog) -->
+        <add id="Codilar_Support::support"
+             title="Support Management"
+             translate="title"
+             module="Codilar_Support"
+             sortOrder="35"
+             resource="Codilar_Support::support"/>
+
+        <!-- Level 1: links inside the fly-out -->
+        <add id="Codilar_Support::requests"
+             title="Support Requests"
+             translate="title"
+             module="Codilar_Support"
+             sortOrder="10"
+             parent="Codilar_Support::support"
+             action="codilar_support/request/index"
+             resource="Codilar_Support::requests"/>
+        <add id="Codilar_Support::request_add"
+             title="Add New Request"
+             translate="title"
+             module="Codilar_Support"
+             sortOrder="20"
+             parent="Codilar_Support::support"
+             action="codilar_support/request/new"
+             resource="Codilar_Support::request_save"/>
+        <add id="Codilar_Support::statuses"
+             title="Manage Statuses"
+             translate="title"
+             module="Codilar_Support"
+             sortOrder="30"
+             parent="Codilar_Support::support"
+             action="codilar_support/status/index"
+             resource="Codilar_Support::statuses"/>
+    </menu>
+</config>
